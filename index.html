@@ -1,0 +1,143 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./custom/custom.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col-lg-12 col-md-12 col-xs-12">
+                <div class="card-body">
+                    <!-- Stepper -->
+                    <div class="steps-form">
+                        <div class="steps-row setup-panel">
+                            <div class="steps-step">
+                                <a href="#step-9" type="button" class="btn btn-indigo btn-circle">1</a>
+                                <p>Step 1</p>
+                            </div>
+                            <div class="steps-step">
+                                <a href="#step-10" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                                <p>Step 2</p>
+                            </div>
+                            <div class="steps-step">
+                                <a href="#step-11" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                                <p>Step 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- First Step -->
+                    <div class="row setup-content" id="step-9">
+                        <div class="col-md-12">
+                            <h3><strong>Step 1</strong></h3>
+                            <div class="row">
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourName" data-error="wrong" data-success="right">Name of Family head</label>
+                                    <input id="headName" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Date of Birth</label>
+                                    <input id="headBirthDate" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Contact Number</label>
+                                    <input id="conctactNumber" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Mobile Number</label>
+                                    <input id="mobileNumber" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Tracking Number</label>
+                                    <input id="trackingNumber" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Series Number</label>
+                                    <input id="seriesNumber" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Gender</label>
+                                    <input id="gender" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Civil Status</label>
+                                    <input id="civilStatus" type="text" required="required" class="form-control validate">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-2">
+                                    <label for="yourLastName" data-error="wrong" data-success="right">Religion</label>
+                                    <input id="religion" type="text" required="required" class="form-control validate">
+                                </div>
+                            </div>
+                            <input type="button" class="btn btn-indigo btn-primary float-right" id="dwn-btn" value="Save"/>
+                        </div>
+                    </div>
+                    <!-- Second Step -->
+                    <div class="row setup-content" id="step-10">
+                        <div class="col-md-12">
+                            <h3><strong>Step 2</strong></h3>
+                            <button class="btn btn-indigo btn-primary prevBtn float-left" type="button">Save</button>
+                            <button class="btn btn-indigo btn-primary nextBtn float-right" type="button">Cancel</button>
+                        </div>
+                    </div>
+                    <!-- Third Step -->
+                    <div class="row setup-content" id="step-11">
+                        <div class="col-md-12">
+                            <h3><strong>Step 3</strong></h3>
+                            <button class="btn btn-indigo btn-primary prevBtn float-left" type="button">Save</button>
+                            <button class="btn btn-default btn-primary float-right" type="submit">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Steps form -->
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="./popper/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./custom/custom.js"></script>
+</body>
+<script type="text/javascript">
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+// Start file download.
+document.getElementById("dwn-btn").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+    var headName = document.getElementById("headName").value;
+    var headBirthDate = document.getElementById("headBirthDate").value
+    var conctactNumber = document.getElementById("conctactNumber").value
+    var mobileNumber = document.getElementById("mobileNumber").value
+    var trackingNumber = document.getElementById("trackingNumber").value
+    var seriesNumber = document.getElementById("seriesNumber").value
+    var gender = document.getElementById("gender").value
+    var civilStatus = document.getElementById("civilStatus").value
+    var religion = document.getElementById("religion").value
+
+
+    var text = 'Head Name, Birth Date, Contact Number, Mobile Number, Tracking Number, Series Number, Gender, Civil Status, Religion' + '\n' + headName + ',' + headBirthDate + ',' + conctactNumber + ',' + mobileNumber + ',' + trackingNumber + ',' + seriesNumber + ',' + gender + ',' + civilStatus + ',' + religion
+    var filename = headName + ".txt";
+    
+    download(filename, text);
+}, false);
+</script>
+
+</html>
